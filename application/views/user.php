@@ -24,18 +24,18 @@ $this->load->view("template/head");
                         <tbody>
                         <?php 
                             $no = 1;
-                            foreach($tbl_user as $u):
+                            foreach($tbl_user->result_array() as $u):
                         ?>
                         <tr>
-                            <td><?= $no++ ?></td>
-                            <td><?php echo $u->nama ?></td>
-                            <td><?php echo $u->username ?></td>
-                            <td><?php echo $u->password ?></td>
-                            <td><?php echo $u->kode_akses ?></td>                            
+                            <td><?php $no++ ?></td>
+                            <td><?= $u['nama'] ?></td>
+                            <td><?= $u['username'] ?></td>
+                            <td><?= $u['password'] ?></td>
+                            <td><?= $u['kode_akses'] ?></td>                            
                             <td>
-                                <a href="<?php echo site_url('user/edit/'.$u->id) ?>"
+                                <a href="<?php //echo site_url('user/edit/'.$u->id) ?>"
 										class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-									<a onclick="deleteConfirm('<?php echo site_url('user/delete/'.$u->id) ?>')"
+									<a onclick="deleteConfirm('<?php //echo site_url('user/delete/'.$u->id) ?>')"
 										href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                             </td>
                         </tr>

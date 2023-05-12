@@ -7,7 +7,7 @@ class User extends CI_Controller {
         $this->load->library('form_validation');
     }
     public function index(){
-        $data['tbl_user']=$this->model_user->getAll();
+        $data['tbl_user']=$this->model_user->tampil_data();
         $this->load->view('template/head');
         $this->load->view('template/sidebar');
         $this->load->view('template/topbar');
@@ -16,28 +16,24 @@ class User extends CI_Controller {
         
     }
 
-    public function add(){
-        $user = $this->model_user;
-        $validation = $this->form_validation;
-        $validation->set_rules($user->rules());
-
-        if ($validation->run()){
-            $user->update();
-            $this->session->set_flashdata('Success!', 'Berhasil Disimpan!');
-        }
-
-        $data["user"] = $user->getById($id);
-        if(!$data["product"]) show_404();
-
-        $this->load->view("user/edit_form", $data);
+    function tambah(){
+        $this->load->view('u_input');
     }
+    
+    function tambah_aksi(){
+        $nama = $this->input->post('nama');
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+        $kode_akses = $this->input->post('kode_akses');
 
-    public function delete($id=null){
-        if (!isset($id)) show_404();
-        if ($this->model_user->delete($id)){
-            redirect(site_url('user'));
-        }
-
+        $data = array(
+            'nama' => $nama,
+            'username' => $username,
+            'password' => $password,
+            'kode_akses' => $kode_akses
+        );
+        $this->model_user->input_data($data, 'tbl_user');
+        redirect('crud/index');
     }
 }
 ?>
