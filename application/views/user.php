@@ -33,9 +33,9 @@
                             <td><?= $u['password'] ?></td>
                             <td><?= $u['kode_akses'] ?></td>                            
                             <td>
-                                <a href="<?php echo site_url('User/edit/'.$u['nama']) ?>"
+                                <a href="<?php echo site_url('User/edit/'.$u['id']) ?>"
 										class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-									<a onclick="deleteConfirm('<?php echo site_url('User/delete/'.$u['nama']) ?>')"
+									<a onclick="deleteConfirm('<?php echo site_url('User/delete/'.$u['id']) ?>')"
 										href="User/index" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                             </td>
                         </tr>
