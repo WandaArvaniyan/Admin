@@ -8,7 +8,7 @@
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
           <a href="./index.html" class="text-nowrap logo-img">
-            <img src="../assets/images/logos/SIM ASET.png" width="180" alt="" />
+            <img src="<?= base_url(); ?>assets/images/logos/SIM ASET.png" width="180" alt="" />
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
             <i class="ti ti-x fs-8"></i>
@@ -22,7 +22,7 @@
               <span class="hide-menu">Home</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="Dashboard" aria-expanded="false">
+              <a class="sidebar-link" href="<?= base_url(); ?>Dashboard" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
@@ -34,7 +34,7 @@
               <span class="hide-menu">UI COMPONENTS</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="User" aria-expanded="false">
+              <a class="sidebar-link" href="<?= base_url(); ?>User" aria-expanded="false">
                 <span>
                   <i class="ti ti-article"></i>
                 </span>
@@ -42,7 +42,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="Akses" aria-expanded="false">
+              <a class="sidebar-link" href="<?= base_url(); ?>Akses" aria-expanded="false">
                 <span>
                   <i class="ti ti-alert-circle"></i>
                 </span>

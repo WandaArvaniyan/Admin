@@ -1,5 +1,5 @@
 <?php 
-$this->load->view("template/head");
+// $this->load->view("template/head");
 ?>
 <div class="container-fluid">
         <!--  Row 1 -->
@@ -9,7 +9,7 @@ $this->load->view("template/head");
                     Table User
                 </div>
                 <div class="card-body">
-                    <a href="#" class="btn btn-primary">Tambah Data</a>
+                    <a href="<?= base_url(); ?>User/tambah" class="btn btn-primary">Tambah Data</a>
                     <table class="table">
                         <thead>
                             <tr>
@@ -27,16 +27,16 @@ $this->load->view("template/head");
                             foreach($tbl_user->result_array() as $u):
                         ?>
                         <tr>
-                            <td><?php $no++ ?></td>
+                            <td><?= $no++ ?></td>
                             <td><?= $u['nama'] ?></td>
                             <td><?= $u['username'] ?></td>
                             <td><?= $u['password'] ?></td>
                             <td><?= $u['kode_akses'] ?></td>                            
                             <td>
-                                <a href="<?php //echo site_url('user/edit/'.$u->id) ?>"
+                                <a href="<?php echo site_url('User/edit/'.$u['nama']) ?>"
 										class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-									<a onclick="deleteConfirm('<?php //echo site_url('user/delete/'.$u->id) ?>')"
-										href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+									<a onclick="deleteConfirm('<?php echo site_url('User/delete/'.$u['nama']) ?>')"
+										href="User/index" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                             </td>
                         </tr>
                         <?php
